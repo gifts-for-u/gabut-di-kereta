@@ -25,13 +25,41 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Love Uuu Sayangkuu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --bg-center: #0b122e;
+      --bg-edge: #0f0f0f;
+      --text-color: #ffe6f5;
+      --glow-pink: rgba(255, 105, 180, 0.7);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
     }
 
     body {
       min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       background: radial-gradient(circle at center, var(--bg-center) 0%, var(--bg-edge) 65%);
       color: var(--text-color);
       font-family: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont,
@@ -40,28 +68,27 @@
       overflow: hidden;
     }
 
-    .container {
+    .root {
+      position: relative;
       width: 100%;
-      max-width: 900px;
-      padding: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      height: 100vh;
     }
 
     .scene {
-      text-shadow: 0 0 10px var(--glow-pink);
-      opacity: 0;
-      transform: translateY(12px);
-      /* agar teks tidak geser-geser tinggi */
+      position: absolute;
+      inset: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      text-shadow: 0 0 10px var(--glow-pink);
+      opacity: 0;
+      transform: translateY(12px);
+      padding: 16px;
     }
 
     .scene--opening {
-      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      font-size: clamp(1.6rem, 4vw, 2.6rem);
       animation: fadeInOut 6s ease-in-out forwards;
     }
 
@@ -70,13 +97,13 @@
     }
 
     .scene--closing {
-      font-size: clamp(1.2rem, 3.5vw, 2rem);
+      font-size: clamp(1.3rem, 3.5vw, 2.1rem);
       white-space: pre-line;
       animation: fadeInStay 6s ease-in-out 12s forwards;
     }
 
     .heart-shape {
-      font-size: clamp(1.2rem, 3vw, 2.2rem);
+      font-size: clamp(0.7rem, 3vw, 1.6rem);
       line-height: 1.05;
       white-space: pre;
       text-align: center;
@@ -121,7 +148,7 @@
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="root">
     <!-- Opening text -->
     <div class="scene scene--opening">
       <div>halo sayang akuu</div>
